@@ -16,7 +16,7 @@ if ($result->num_rows == 0) {
     $sql = "INSERT INTO users (fbid, name, email, token) VALUES ($id, '$name', '$email', '$token')";
     if ($conn->query($sql) === TRUE) {
         //echo "New user created successfully<br>";
-        foreach ($objUser['likes']['data'] as $key => $value) {
+        /*foreach ($objUser['likes']['data'] as $key => $value) {
             $pageid = $value['id'];
             $title = $value['name'];
             $sql2 = "INSERT INTO pages (pageid, title) VALUES ($pageid,'$title')";
@@ -25,7 +25,7 @@ if ($result->num_rows == 0) {
             }else {
                 //echo 'Error'.$title.'<br>';
             }
-        }
+        }*/
         $last_id = $conn->insert_id;
         session_start();
         $_SESSION['aut'] = true;
