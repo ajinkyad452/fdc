@@ -5,6 +5,7 @@
     if ($result->num_rows == 0) {
       //header("Location:step1.php");
     }else{
+      echo '<div class="col-md-8">';
       while($row = $result->fetch_assoc()) {
           if($row['change_maker'] == 1){
             $context = "I am the change!";
@@ -15,7 +16,7 @@
           $title = $row['title'];
           $description = $row['description'];
       ?>
-          <div class="col-md-8">
+          
             <div class="card card-user">
               <div class="card-header">
                 <h5 class="card-title"><?php echo $title;?></h5>
@@ -24,10 +25,11 @@
                 <?php echo $description;?>
                 
             </div>
-          </div>
+          
         
 <?php
       }
+      echo '</div>';
     }
   include "footer.php";
 ?>
