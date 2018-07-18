@@ -34,7 +34,7 @@
           </div>
         </div>
         <div class="col-md-4">
-            <div class="card card-user">
+            <div class="card text-white bg-primary">
               <div class="card-header">
                 <h5 class="card-title"><?php echo $context;?></h5>
               </div>
