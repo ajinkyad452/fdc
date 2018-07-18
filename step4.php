@@ -194,9 +194,18 @@
   document.getElementById('shareBtn').onclick = function() {
     var shareurl = document.getElementById('shareurl').value;
     FB.ui({
-      method: 'share',
+      /*method: 'share',
       mobile_iframe: true,
-      href: shareurl,
+      href: shareurl,*/
+      method: 'share_open_graph',
+      action_type: 'og.likes',
+      action_properties: JSON.stringify({
+        object: {
+          'og:url': shareurl,
+          'og:title': "overrideTitle",
+          'og:description': "overrideDescription",
+        }
+      })
     }, function(response){});
   }
   window.fbAsyncInit = function() {
