@@ -78,7 +78,7 @@
       console.log('Successful login for: ' + response.name);
       console.log('Successful login for: ' + response.likes.data[0].name);
       document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
+        'Welcome, ' + response.name + '!';
         postdata(response);
         
     });
@@ -95,7 +95,10 @@
     $.post("login.php",
     {user: user},
     function(data, status){
-        alert("Data: " + data + "\nStatus: " + status);
+      if(data == 'success'){
+        window.location = "step1.php";
+        //alert("Data: " + data + "\nStatus: " + status);
+      }
     });
   }
 </script>
