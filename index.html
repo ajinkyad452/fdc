@@ -56,7 +56,7 @@
     // These three cases are handled in the callback function.
 
     FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
+      //statusChangeCallback(response);
     });
 
   };
@@ -77,9 +77,8 @@
     FB.api('/me?fields=id,name,email,likes', function(response) {
       console.log('Successful login for: ' + response.name);
       //console.log('Successful login for: ' + response.likes.data[0].name);
-      document.getElementById('status').innerHTML =
-        'Welcome, ' + response.name + '!';
-        postdata(response);
+      //document.getElementById('status').innerHTML = 'Redirecting . . .';//'Welcome, ' + response.name + '!';
+      postdata(response);
         
     });
   }
@@ -101,6 +100,11 @@
       }
     });
   }
+  function logoutfb() {
+    FB.logout(function(response) {
+       // Person is now logged out
+    });
+  }
 </script>
 
 <!--
@@ -109,11 +113,11 @@
   the FB.login() function when clicked.
 -->
 
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
+<!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button> -->
 
 <div id="status">
 </div>
-
+<div style="left:40%" class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="true" onlogin="checkLoginState();"></div>
 </body>
 </html>
