@@ -143,7 +143,7 @@
           </li>
           
           <li class="active-pro">
-            <a href="http://www.facebook.com">
+            <a href="https://fb.me/bethechangesave">
               <i class="nc-icon nc-spaceship"></i>
               <p>Like Our Page</p>
             </a>
