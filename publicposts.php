@@ -25,7 +25,7 @@
                 <?php echo $description;?>
                 
             </div>
-          
+            </div>
         
 <?php
       }
