@@ -21,6 +21,7 @@
     }
   }
 ?>
+    
         <div class="col-md-8">
           <div class="card card-user">
             <div class="card-header">
@@ -43,6 +44,17 @@
               </div>
             </div>
           </div>
+        <div class="col-md-12">
+          <div class="card ">
+            <div class="card-header">
+              <h5 class="card-title">Would you like be the change?</h5>
+            </div>
+            <div class="card-body">
+              Please <a href="step1.php" class="btn btn-primary">Click Here</a> to add your experience and share it with your friends so that we can make a better place.
+                
+            </div>
+          </div>
+        </div>
 <?php
   include "footer.php";
 ?>

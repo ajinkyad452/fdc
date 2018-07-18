@@ -129,12 +129,12 @@
               <p>Change Makers</p>
             </a>
           </li>
-          <li>
+          <!-- <li>
             <a href="./notifications.php">
               <i class="nc-icon nc-bell-55"></i>
               <p>Notifications</p>
             </a>
-          </li>
+          </li> -->
           <li class="active ">
             <a href="./step1.php">
               <i class="nc-icon nc-send"></i>
@@ -143,9 +143,9 @@
           </li>
           
           <li class="active-pro">
-            <a href="./upgrade.html">
+            <a href="http://www.facebook.com">
               <i class="nc-icon nc-spaceship"></i>
-              <p>Upgrade to PRO</p>
+              <p>Like Our Page</p>
             </a>
           </li>
         </ul>
