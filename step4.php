@@ -145,6 +145,7 @@
                 <form action="step4.php" method="post">
                   <input type="hidden" name="postid" value="<?php echo $_GET['postid'];?>">
                   <input type="hidden" id="shareurl" value="https://momsim.in/fdc/publicpost.php?postid=<?php echo $_GET['postid'];?>">
+                  <input type="hidden" id="username" value="<?php echo $_SESSION['name']; ?>" name="">
                   <div class="row">
                     <div class="col-md-12 pr-1">
                       <div class="form-group">
@@ -192,6 +193,7 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
   document.getElementById('shareBtn').onclick = function() {
+    var username = document.getElementById('username').value;
     var shareurl = document.getElementById('shareurl').value;
     var overrideTitle = document.getElementById('overrideTitle').value;
     var overrideDescription = document.getElementById('overrideDescription').value;
@@ -200,13 +202,13 @@
       /*method: 'share',
       mobile_iframe: true,
       href: shareurl,*/
-      hashtag: '#BeTheChange #ShareYourStory #HelpTheWorld',
+      hashtag: '#BeTheChange',
       method: 'share_open_graph',
       action_type: 'og.likes',
       action_properties: JSON.stringify({
         object: {
           'og:url': shareurl,
-          'og:title': overrideTitle,
+          'og:title': username + ": " + overrideTitle,
           'og:description': overrideDescription,
           'og:image': overrideImage
         }
