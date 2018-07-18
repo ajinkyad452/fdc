@@ -6,14 +6,15 @@
       //header("Location:step1.php");
     }else{
       while($row = $result->fetch_assoc()) {
-          if($row['p.change_maker'] == 1){
+          if($row['change_maker'] == 1){
             $context = "I am the change!";
           }
           else {
             $context = "I saw the change!";
           }
-          $title = $row['p.title'];
-          $description = $row['p.description'];
+          $title = $row['title'];
+          $description = $row['description'];
+          $name = $row['name'];
       ?>
           <div class="col-md-8">
             <div class="card card-user">
@@ -32,7 +33,7 @@
                 <h5 class="card-title"><?php echo $context;?></h5>
               </div>
               <div class="card-body">
-                <?php echo $description;?>
+                <?php echo $name;?>
                 
               </div>
             </div>
