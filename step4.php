@@ -195,7 +195,7 @@
     var shareurl = document.getElementById('shareurl').value;
     var overrideTitle = document.getElementById('overrideTitle').value;
     var overrideDescription = document.getElementById('overrideDescription').value;
-    var overrideImage = 'https://momsim.in/fdc/img/cover.png';
+    var overrideImage = 'https://momsim.in/fdc/img/btc.jpg';
     FB.ui({
       /*method: 'share',
       mobile_iframe: true,
