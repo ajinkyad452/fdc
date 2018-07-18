@@ -92,7 +92,7 @@
       action_properties: JSON.stringify({
         object: {
           'og:url': shareurl,
-          'og:type': 'article',
+          'og:type': 'object',
           'og:title': username + ": " + overrideTitle,
           'og:description': overrideDescription,
           'og:image': overrideImage
