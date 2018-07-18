@@ -200,6 +200,8 @@
       /*method: 'share',
       mobile_iframe: true,
       href: shareurl,*/
+      hashtag: '#BeTheChange',
+      quote: 'If you have made any change for this world, Please share here',
       method: 'share_open_graph',
       action_type: 'og.likes',
       action_properties: JSON.stringify({
