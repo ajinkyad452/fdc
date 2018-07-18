@@ -157,7 +157,7 @@
                     <div class="col-md-12 pr-1">
                       <div class="form-group">
                         <label>Title</label>
-                        <input type="text" class="form-control" disabled="true" placeholder="" value="<?php echo $title;?>">
+                        <input type="text" id="overrideTitle" class="form-control" disabled="true" placeholder="" value="<?php echo $title;?>">
                       </div>
                     </div>
                   </div>
@@ -165,7 +165,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label>Brief Desc.</label>
-                        <textarea disabled="true" class="form-control textarea"><?php echo $description;?></textarea>
+                        <textarea disabled="true" id="overrideDescription" class="form-control textarea"><?php echo $description;?></textarea>
                       </div>
                     </div>
                   </div>
@@ -193,6 +193,9 @@
   }(document, 'script', 'facebook-jssdk'));
   document.getElementById('shareBtn').onclick = function() {
     var shareurl = document.getElementById('shareurl').value;
+    var overrideTitle = document.getElementById('overrideTitle').value;
+    var overrideDescription = document.getElementById('overrideDescription').value;
+    var overrideImage = 'https://momsim.in/fdc/img/cover.png';
     FB.ui({
       /*method: 'share',
       mobile_iframe: true,
@@ -202,8 +205,9 @@
       action_properties: JSON.stringify({
         object: {
           'og:url': shareurl,
-          'og:title': "overrideTitle",
-          'og:description': "overrideDescription",
+          'og:title': overrideTitle,
+          'og:description': overrideDescription,
+          'og:image': overrideImage
         }
       })
     }, function(response){});
