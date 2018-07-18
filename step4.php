@@ -144,7 +144,7 @@
               <div class="card-body">
                 <form action="step4.php" method="post">
                   <input type="hidden" name="postid" value="<?php echo $_GET['postid'];?>">
-                  <input type="hidden" id="shareurl" value="https://momsim.in/fdc/publicpost?postid=<?php echo $_GET['postid'];?>">
+                  <input type="hidden" id="shareurl" value="https://momsim.in/fdc/publicpost.php?postid=<?php echo $_GET['postid'];?>">
                   <div class="row">
                     <div class="col-md-12 pr-1">
                       <div class="form-group">
