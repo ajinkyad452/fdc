@@ -90,7 +90,7 @@
       method: 'share_open_graph',
       action_type: 'news.publishes',
       action_properties: JSON.stringify({
-        object: {
+        article: {
           'og:url': shareurl,
           'og:type': 'article',
           'og:title': username + ": " + overrideTitle,
