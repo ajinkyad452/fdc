@@ -88,7 +88,7 @@
       href: shareurl,*/
       hashtag: '#BeTheChange',
       method: 'share_open_graph',
-      //action_type: 'og.likes',
+      action_type: 'news.publishes',
       action_properties: JSON.stringify({
         object: {
           'og:url': shareurl,
