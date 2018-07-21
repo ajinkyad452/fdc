@@ -47,7 +47,7 @@
                 <h5 class="card-title">Who is the Change?</h5>
               </div>
               <div class="card-body">
-                <form action="step1.php" method="post">
+                <form action="step1.php" method="post" enctype="multipart/form-data">
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
@@ -84,7 +84,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label>Title</label>
-                        <input type="text" class="form-control" name="title" placeholder="Home Address" value="Tea cups made of mud">
+                        <input type="text" class="form-control" name="title" required="true" placeholder="Tea cups made of mud">
                       </div>
                     </div>
                   </div>
@@ -93,10 +93,11 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label>Detail Description</label>
-                        <textarea name="description" class="form-control textarea">I saw a tea seller stall. This guy was using cups for selling tea which were made from mud. This is super exciting, No plastic polution. I saw he was charging 1 rs extra for tea cup and people were happily giving it to him for his initiativie towords plastic cup ban.</textarea>
+                        <textarea name="description" class="form-control textarea" required="true" placeholder="Please enter summary"></textarea>
                       </div>
                     </div>
                   </div>
+                  
                   <div class="row">
                     <div class="update ml-auto mr-auto">
                       <button type="submit" class="btn btn-primary btn-round">Next</button>
