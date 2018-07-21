@@ -82,23 +82,37 @@
     var overrideTitle = document.getElementById('overrideTitle').value;
     var overrideDescription = document.getElementById('overrideDescription').value;
     var overrideImage = 'https://momsim.in/fdc/img/btc.jpg';
+    // FB.ui({
+    //   /*method: 'share',
+    //   mobile_iframe: true,
+    //   href: shareurl,*/
+    //   hashtag: '#BeTheChange',
+    //   method: 'share_open_graph',
+    //   action_type: 'news.publishes',
+    //   action_properties: JSON.stringify({
+    //     article: {
+    //       'og:url': shareurl,
+    //       'og:type': 'article',
+    //       'og:title': username + ": " + overrideTitle,
+    //       'og:description': overrideDescription,
+    //       'og:image': overrideImage
+    //     }
+    //   })
+    // }, function(response){});
     FB.ui({
-      /*method: 'share',
-      mobile_iframe: true,
-      href: shareurl,*/
-      hashtag: '#BeTheChange',
-      method: 'share_open_graph',
+    display: 'popup',
+method: 'share_open_graph',
       action_type: 'news.publishes',
-      action_properties: JSON.stringify({
+action_properties: JSON.stringify({
         article: {
-          'og:url': shareurl,
+          'og:url': 'https://momsim.in/fdc/publicpost.php?postid=1',
           'og:type': 'article',
-          'og:title': username + ": " + overrideTitle,
-          'og:description': overrideDescription,
-          'og:image': overrideImage
+          'og:title': "Test",
+          'og:description': "TEst",
+          'og:image': "https://momsim.in/fdc/img/btc.jpg"
         }
       })
-    }, function(response){});
+  }, function(response){});
   }
   window.fbAsyncInit = function() {
     FB.init({
