@@ -1,5 +1,8 @@
 <?php
   include "header.php";
+  if(!isset($_SESSION['aut'])){
+    header("Location:index.html");
+  }
   $id = $_SESSION['id'];
   if(isset($_GET['postid'])){
     $sql = "SELECT * FROM posts WHERE id=".$_GET['postid']." AND uid=".$id;
