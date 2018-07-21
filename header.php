@@ -87,6 +87,15 @@
       border-radius: 50%;
       background: white;
     }
+
+
+    /*-------------*/
+    .gradiamchange {
+      background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+    }
+    .gradisawchange {
+      background-image: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
+    }
   </style>
 </head>
 

@@ -10,9 +10,11 @@
       while($row = $result->fetch_assoc()) {
           if($row['change_maker'] == 1){
             $context = "I am the change!";
+            $css = 'gradiamchange';
           }
           else {
             $context = "I saw the change!";
+            $css = 'gradisawchange';
           }
           $title = $row['title'];
           $description = $row['description'];
@@ -34,7 +36,7 @@
           </div>
         </div>
         <div class="col-md-4">
-            <div class="card text-white bg-primary">
+            <div class="card text-white bg-primary <?php echo $css;?>">
               <div class="card-header">
                 <h5 class="card-title"><?php echo $context;?></h5>
               </div>
