@@ -7,6 +7,7 @@
     echo $sql = "SELECT * FROM change_makers limit ".$offset.", 10";
 
     $result = $conn->query($sql);
+    echo $result->num_rows;
     if ($result->num_rows == 0) {
       //header("Location:step1.php");
     }else{
