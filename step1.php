@@ -44,14 +44,11 @@
           <div class="col-md-8">
             <div class="card">
               <div class="card-header">
-                <h5 class="card-title">Who is the Change?</h5>
-              </div>
-              <div class="card-body">
                 <form action="step1.php" method="post" enctype="multipart/form-data">
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label class="container">I am the change
+                        <label class="container"><h5 class="card-title">I am the change</h5>
                           <input type="radio" name="change_maker" value="1">
                           <span class="checkmark"></span>
                         </label>
@@ -60,7 +57,7 @@
                   
                     <div class="col-md-6">
                       <div class="form-group">
-                        <label class="container">I saw the change
+                        <label class="container"><h5 class="card-title">I saw the change</h5>
                           <input type="radio" name="change_maker" value="2">
                           <span class="checkmark"></span>
                         </label>

@@ -66,7 +66,7 @@
             <div class="card card-user">
               <div class="card-header">
                 <a href="step4.php?postid=<?php echo $_GET['postid'];?>" class="pull-right">Skip</a>
-                <h5 class="card-title">Would you like to add any vendor?</h5>
+                <h5 class="card-title">Would you like to link any eco-friendly product provider?</h5>
               </div>
               <div class="card-body">
                 <form action="step3.php" method="post">
@@ -90,9 +90,9 @@
                   <div class="row">
                     <div class="col-md-12 pr-1">
                       <div class="form-group">
-                        <label>Mobile</label>
-                        <input type="text" name="mobile_cc" required="true" class="form-control" placeholder="+91">
-                        <input type="text" name="mobile" required="true" class="form-control" placeholder="90000000000">
+                        <label style="display: block;">Mobile</label>
+                        <input type="text" name="mobile_cc" required="true" class="form-control col-md-2" style="display: inline;" placeholder="+91">
+                        <input type="text" name="mobile" required="true" class="form-control col-md-9" style="display: inline;" placeholder="90000000000">
                       </div>
                     </div>
                   </div>
@@ -101,6 +101,14 @@
                       <div class="form-group">
                         <label>Address</label>
                         <input type="text" name="address" required="true" class="form-control" placeholder="Address" value="Pune, India">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>Any Specific Product</label>
+                        <input type="text" name="product" class="form-control" placeholder="Enter Product" value="Cotton Bags">
                       </div>
                     </div>
                   </div>
