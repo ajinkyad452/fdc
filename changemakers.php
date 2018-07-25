@@ -14,72 +14,40 @@
 
       ?>
 <div class="col-md-12">
-            <div class="card">
-              <div class="card-header">
-                <h4 class="card-title"> Volunteers / Change Makers</h4>
-              </div>
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table">
-                    <thead class=" text-primary">
-                      <th>
-                        Name
-                      </th>
-                      <th>
-                        Email
-                      </th>
-                      <th>
-                        Mobile
-                      </th>
-                      <th>
-                        Address
-                      </th>
-                      <th class="text-right">
-                        Note
-                      </th>
-                    </thead>
-                    <tbody>
-      <?php
+  <?php
       while($row = $result->fetch_assoc()) {
-          
-      ?>
-          
-      
-                      <tr>
-                        <td>
-                          <?php echo $row['name'];?>
-                          <?php
-                            $vendor_id = $row['id'];
-          echo $sql1 = "SELECT p.title,u.name FROM posts as p INNER JOIN users as u ON p.uid = u.id AND p.vendor_id = ".$vendor_id;
+          $vendor_id = $row['id'];
+          $sql1 = "SELECT p.title,p.change_maker,u.name FROM posts as p INNER JOIN users as u ON p.uid = u.id AND p.vendor_id = ".$vendor_id;
           $result1 = $conn->query($sql1);
           while($row1 = $result1->fetch_assoc()) {
-            echo $row1['p.title'];
-            echo $row1['name'];
-          }
-                          ?>
-                        </td>
-                        <td>
-                          <?php echo $row['email'];?>
-                        </td>
-                        <td>
-                          <?php echo $row['mobile_cc'].$row['mobile'];?>
-                        </td>
-                        <td>
-                          <?php echo $row['address'];?>
-                        </td>
-                        <td class="text-right">
-                          <?php echo $row['note'];?>
-                        </td>
-                      </tr>
-      <?php
-        }
+            if($row['change_maker'] == 1){
+              $context = "I am the change!";
+              $css = 'gradiamchange';
+            }
+            else {
+              $context = "I saw the change!";
+              $css = 'gradisawchange';
+            }
+          
       ?>
-                    </tbody>
-                  </table>
-                </div>
+        <div class="card <?php echo $css;?>">
+              <div class="card-header">
+                <h4 class="card-title"> <?php echo $row['name'];?></h4>
+              </div>
+              <div class="card-body">
+                <?php echo $row1['title'];?>
+              </div>
+              <div class="card-footer">
+                Posted By: <?php echo $row1['name'];?>
               </div>
             </div>
-          </div>
+
+      <?php 
+        }
+      }
+      ?>
+    </div>
+            
 <?php
     }
   include "footer.php";

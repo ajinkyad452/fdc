@@ -19,7 +19,7 @@
           $name = $row['name'];
       ?>
           <div class="col-md-6">
-            <div class="card card-user <?php echo $css;?>">
+            <div class="card <?php echo $css;?>">
               <div class="card-header">
                 <h5 class="card-title"><?php echo $title;?></h5>
               </div>
