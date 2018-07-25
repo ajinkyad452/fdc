@@ -45,7 +45,7 @@
         }
       }
       ?>
-    <a class="btn btn-round btn-primary" href="changemakers.php?page=<?php echo $nextpage;?>" >Next</button>
+    <a class="btn btn-round btn-primary" href="changemakers.php?page=<?php echo $nextpage;?>" >Next</a>
             
 <?php
     }
