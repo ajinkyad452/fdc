@@ -5,11 +5,17 @@
       $offset = $_GET['page'];
     }
     $nextpage = $offset + 10;
+    if($offset != 0)
+      $prevpage = $offset - 10;
+    else
+      $prevpage = 0;
+
     $sql = "SELECT * FROM change_makers limit ".$offset.", 10";
 
     $result = $conn->query($sql);
     if ($result->num_rows == 0) {
       //header("Location:step1.php");
+      
     }else{
 
       ?>
@@ -45,6 +51,7 @@
         }
       }
       ?>
+    <a class="btn btn-round btn-primary" href="changemakers.php?page=<?php echo $prevpage;?>" >Previous</a>
     <a class="btn btn-round btn-primary" href="changemakers.php?page=<?php echo $nextpage;?>" >Next</a>
             
 <?php
