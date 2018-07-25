@@ -11,11 +11,7 @@
     if ($result->num_rows == 0) {
       //header("Location:step1.php");
     }else{
-      $sql1 = "SELECT p.title,u.name FROM posts as p INNER JOIN users as u ON p.uid = u.id AND p.vendor_id = ".$vendor_id;
-      $result1 = $conn->query($sql1);
-      while($row1 = $result1->fetch_assoc()) {
-        print_r($row1);
-      }
+
       ?>
 <div class="col-md-12">
             <div class="card">
@@ -45,7 +41,12 @@
                     <tbody>
       <?php
       while($row = $result->fetch_assoc()) {
-          
+          $vendor_id = $row['id'];
+      $sql1 = "SELECT p.title,u.name FROM posts as p INNER JOIN users as u ON p.uid = u.id AND p.vendor_id = ".$vendor_id;
+      $result1 = $conn->query($sql1);
+      while($row1 = $result1->fetch_assoc()) {
+        print_r($row1);
+      }
       ?>
           
       
