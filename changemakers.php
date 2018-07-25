@@ -41,18 +41,22 @@
                     <tbody>
       <?php
       while($row = $result->fetch_assoc()) {
-          $vendor_id = $row['id'];
-      $sql1 = "SELECT p.title,u.name FROM posts as p INNER JOIN users as u ON p.uid = u.id AND p.vendor_id = ".$vendor_id;
-      $result1 = $conn->query($sql1);
-      while($row1 = $result1->fetch_assoc()) {
-        print_r($row1);
-      }
+          
       ?>
           
       
                       <tr>
                         <td>
                           <?php echo $row['name'];?>
+                          <?php
+                            $vendor_id = $row['id'];
+          $sql1 = "SELECT p.title,u.name FROM posts as p INNER JOIN users as u ON p.uid = u.id AND p.vendor_id = ".$vendor_id;
+          $result1 = $conn->query($sql1);
+          while($row1 = $result1->fetch_assoc()) {
+            echo $row1['p.title'];
+            echo $row1['name'];
+          }
+                          ?>
                         </td>
                         <td>
                           <?php echo $row['email'];?>
