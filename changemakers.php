@@ -4,7 +4,7 @@
     if(isset($_GET['page'])){
       $offset = $_GET['page'];
     }
-    echo $sql = "SELECT * FROM change_makers where limit ".$offset.", 10";
+    echo $sql = "SELECT * FROM change_makers limit ".$offset.", 10";
 
     $result = $conn->query($sql);
     if ($result->num_rows == 0) {
