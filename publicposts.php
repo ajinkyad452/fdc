@@ -10,7 +10,7 @@
     else
       $prevpage = 0;
     ?>
-<div class="card">
+<div class="card col-md-12">
               <div class="card-header">
                 <h4 class="card-title"> Stories</h4>
               </div>

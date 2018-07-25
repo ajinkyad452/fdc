@@ -12,7 +12,7 @@
 
     ?>
 
-  <div class="card">
+  <div class="card col-md-12">
     <div class="card-header">
       <h4 class="card-title"> Volunteers / Change Makers</h4>
     </div>

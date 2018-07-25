@@ -118,21 +118,45 @@
           </div> -->
         </a>
       </div>
+      <?php
+        $uri = $_SERVER['REQUEST_URI'];
+        $onlyuri = explode('.php', $uri);
+        $arrmyuri = explode('/', $onlyuri[0]);
+        $page = end($arrmyuri);
+        $storiesUri = '';
+        $vendorsUri = '';
+        $volunteersUri = '';
+        $defaultUri = '';
+        switch ($page) {
+          case 'publicposts':
+            $stories = 'active';
+            break;
+          case 'vendors':
+            $vendorsUri = 'active';
+            break;
+          case 'changemakers':
+            $volunteersUri = 'active';
+            break;
+          default:
+            $defaultUri = 'active';
+            break;
+        }
+      ?>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li>
+          <li class="<?php echo $stories; ?>">
             <a href="./publicposts.php">
               <i class="nc-icon nc-paper"></i>
               <p>Stories</p>
             </a>
           </li>
-          <li>
+          <li class="<?php echo $vendorsUri; ?>">
             <a href="./vendors.php">
               <i class="nc-icon nc-badge"></i>
               <p>Eco-Friendly Sellers</p>
             </a>
           </li>
-          <li>
+          <li class="<?php echo $volunteersUri; ?>">
             <a href="./changemakers.php">
               <i class="nc-icon nc-bulb-63"></i>
               <p>Volunteers</p>
@@ -144,7 +168,7 @@
               <p>Notifications</p>
             </a>
           </li> -->
-          <li class="active ">
+          <li class="<?php echo $defaultUri; ?>">
             <a href="./step1.php">
               <i class="nc-icon nc-send"></i>
               <p>Add Your Story</p>
