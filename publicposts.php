@@ -67,8 +67,8 @@
       }
     }
       ?>
-<a class="btn btn-round btn-primary" href="changemakers.php?page=<?php echo $prevpage;?>" >Previous</a>
-    <a class="btn btn-round btn-primary" href="changemakers.php?page=<?php echo $nextpage;?>" >Next</a>
+<a class="btn btn-round btn-primary" href="publicposts.php?page=<?php echo $prevpage;?>" >Previous</a>
+    <a class="btn btn-round btn-primary" href="publicposts.php?page=<?php echo $nextpage;?>" >Next</a>
 
     <?php
   include "footer.php";
