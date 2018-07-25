@@ -9,7 +9,7 @@
 <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title"> Vendors</h4>
+                <h4 class="card-title"> Eco-friendly product sellers</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -46,7 +46,7 @@
                           <?php echo $row['address'];?>
                         </td>
                         <td class="text-right">
-                          <button>Send me details</button>
+                          <button class="btn btn-primary">Send me details</button>
                         </td>
                       </tr>
       <?php
