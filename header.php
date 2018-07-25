@@ -123,19 +123,19 @@
           <li>
             <a href="./publicposts.php">
               <i class="nc-icon nc-paper"></i>
-              <p>Posts</p>
+              <p>Stories</p>
             </a>
           </li>
           <li>
             <a href="./vendors.php">
               <i class="nc-icon nc-badge"></i>
-              <p>Vendors</p>
+              <p>Eco-Friendly Vendors</p>
             </a>
           </li>
           <li>
             <a href="./changemakers.php">
               <i class="nc-icon nc-bulb-63"></i>
-              <p>Change Makers</p>
+              <p>Volunteers</p>
             </a>
           </li>
           <!-- <li>

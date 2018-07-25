@@ -65,7 +65,7 @@
             <div class="card card-user">
               <div class="card-header">
                 <a href="step3.php?postid=<?php echo $_GET['postid'];?>" class="pull-right">Skip</a>
-                <h5 class="card-title">Details about the change maker</h5> 
+                <h5 class="card-title">Would you like to mention about the volunteer?</h5> 
               </div>
               <div class="card-body">
                 <form action="step2.php" method="post">
@@ -89,9 +89,9 @@
                   <div class="row">
                     <div class="col-md-12 pr-1">
                       <div class="form-group">
-                        <label>Mobile</label>
-                        <input type="text" name="mobile_cc" required="true" class="form-control" placeholder="+91">
-                        <input type="text" name="mobile" required="true" class="form-control" placeholder="90000000000">
+                        <label style="display: block;">Mobile</label>
+                        <input type="text" name="mobile_cc" required="true" class="form-control col-md-2" style="display: inline;" placeholder="+91">
+                        <input type="text" name="mobile" required="true" class="form-control col-md-9" style="display: inline;" placeholder="90000000000">
                       </div>
                     </div>
                   </div>
