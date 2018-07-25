@@ -129,7 +129,7 @@
           <li>
             <a href="./vendors.php">
               <i class="nc-icon nc-badge"></i>
-              <p>Eco-Friendly Vendors</p>
+              <p>Eco-Friendly Sellers</p>
             </a>
           </li>
           <li>
@@ -147,7 +147,7 @@
           <li class="active ">
             <a href="./step1.php">
               <i class="nc-icon nc-send"></i>
-              <p>Add Post</p>
+              <p>Add Your Story</p>
             </a>
           </li>
           

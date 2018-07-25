@@ -1,15 +1,25 @@
 <?php
   include "header.php";
-    $sql = "SELECT * FROM change_makers";
+    $offset = 0;
+    if(isset($_GET['page'])){
+      $offset = $_GET['page'];
+    }
+    $sql = "SELECT * FROM change_makers where limit ".$offset.", 10";
+
     $result = $conn->query($sql);
     if ($result->num_rows == 0) {
       header("Location:step1.php");
     }else{
+      $sql1 = "SELECT p.title,u.name FROM posts as p INNER JOIN users as u ON p.uid = u.id AND p.vendor_id = ".$vendor_id;
+      $result1 = $conn->query($sql1);
+      while($row1 = $result1->fetch_assoc()) {
+        print_r($row1);
+      }
       ?>
 <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title"> Change Makers</h4>
+                <h4 class="card-title"> Volunteers / Change Makers</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">

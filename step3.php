@@ -19,7 +19,8 @@
     $address = $_POST['address'];
     $note = $_POST['note'];
     $postid = $_POST['postid'];
-    $sql = "INSERT INTO vendors (uid, name, email, mobile_cc, mobile, address, note) VALUES ($id, '$name', '$email', '$mobile_cc', '$mobile', '$address', '$note')";
+    $product = $_POST['product'];
+    $sql = "INSERT INTO vendors (uid, name, email, mobile_cc, mobile, address, note, product) VALUES ($id, '$name', '$email', '$mobile_cc', '$mobile', '$address', '$note', '$product')";
 
     if ($conn->query($sql) === TRUE) {
         ?>
