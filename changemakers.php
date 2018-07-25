@@ -4,28 +4,26 @@
     if(isset($_GET['page'])){
       $offset = $_GET['page'];
     }
-    echo $sql = "SELECT * FROM change_makers limit ".$offset.", 10";
+    $nextpage = $offset + 10;
+    $sql = "SELECT * FROM change_makers limit ".$offset.", 10";
 
     $result = $conn->query($sql);
-    echo $result->num_rows;
     if ($result->num_rows == 0) {
       //header("Location:step1.php");
     }else{
 
       ?>
-<div class="col-md-12">
+<div class="col-md-6">
   <?php
       while($row = $result->fetch_assoc()) {
           $vendor_id = $row['id'];
           $sql1 = "SELECT p.title,p.change_maker,u.name FROM posts as p INNER JOIN users as u ON p.uid = u.id AND p.vendor_id = ".$vendor_id;
           $result1 = $conn->query($sql1);
           while($row1 = $result1->fetch_assoc()) {
-            if($row['change_maker'] == 1){
-              $context = "I am the change!";
+            if($row['change_maker']%2 == 1){
               $css = 'gradiamchange';
             }
             else {
-              $context = "I saw the change!";
               $css = 'gradisawchange';
             }
           
@@ -46,7 +44,9 @@
         }
       }
       ?>
+
     </div>
+    <a class="btn btn-round btn-primary" href="changemakers.php?page=<?php echo $nextpage;?>" >Next</button>
             
 <?php
     }
