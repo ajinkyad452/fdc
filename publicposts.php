@@ -8,16 +8,18 @@
       while($row = $result->fetch_assoc()) {
           if($row['change_maker'] == 1){
             $context = "I am the change!";
+            $css = 'gradiamchange';
           }
           else {
             $context = "I saw the change!";
+            $css = 'gradisawchange';
           }
           $title = $row['title'];
           $description = $row['description'];
           $name = $row['name'];
       ?>
-          <div class="col-md-8">
-            <div class="card card-user">
+          <div class="col-md-6">
+            <div class="card card-user <?php echo $css;?>">
               <div class="card-header">
                 <h5 class="card-title"><?php echo $title;?></h5>
               </div>
@@ -25,19 +27,22 @@
                 <?php echo $description;?>
                 
               </div>
+              <div class="card-footer">
+                Published By: <?php echo $name;?>
+              </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <!-- <div class="col-md-4">
             <div class="card text-white bg-primary">
               <div class="card-header">
-                <h5 class="card-title"><?php echo $context;?></h5>
+                <h5 class="card-title"><?php //echo $context;?></h5>
               </div>
               <div class="card-body">
-                <?php echo $name;?>
+                <?php //echo $name;?>
                 
               </div>
             </div>
-          </div>
+          </div> -->
         
 <?php
       }
