@@ -10,23 +10,32 @@
     else
       $prevpage = 0;
 
-    $sql = "SELECT * FROM posts as p INNER JOIN users as u ON p.uid = u.id limit ".$offset.",10";
+    $sql = "SELECT * FROM posts limit ".$offset.",10";
     $result = $conn->query($sql);
     if ($result->num_rows == 0) {
       //header("Location:step1.php");
     }else{
       while($row = $result->fetch_assoc()) {
-          if($row['change_maker'] == 1){
-            $context = "I am the change!";
-            $css = 'gradiamchange';
+        $uid = $row['uid'];
+          $sql1 = "SELECT * FROM users WHERE id = ".$uid;
+          $result1 = $conn->query($sql1);
+          $name = '';
+          $css = 'gradiamchange';
+          $context = 'I am the change!';
+          while($row1 = $result1->fetch_assoc()) {
+            $name = $row1['name'];
+            if($row['change_maker'] == 1){
+              $context = "I am the change!";
+              $css = 'gradiamchange';
+            }
+            else {
+              $context = "I saw the change!";
+              $css = 'gradisawchange';
+            }
           }
-          else {
-            $context = "I saw the change!";
-            $css = 'gradisawchange';
-          }
+          
           $title = $row['title'];
           $description = $row['description'];
-          $name = $row['name'];
       ?>
           <div class="col-md-6">
             <div class="card <?php echo $css;?>">
