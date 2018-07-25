@@ -9,6 +9,13 @@
       $prevpage = $offset - 10;
     else
       $prevpage = 0;
+    ?>
+<div class="card">
+              <div class="card-header">
+                <h4 class="card-title"> Stories</h4>
+              </div>
+            </div>
+    <?php
 
     $sql = "SELECT * FROM posts limit ".$offset.",10";
     $result = $conn->query($sql);

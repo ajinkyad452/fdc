@@ -10,6 +10,15 @@
     else
       $prevpage = 0;
 
+    ?>
+
+  <div class="card">
+    <div class="card-header">
+      <h4 class="card-title"> Volunteers / Change Makers</h4>
+    </div>
+  </div>
+    <?php
+
     $sql = "SELECT * FROM change_makers limit ".$offset.", 10";
 
     $result = $conn->query($sql);
