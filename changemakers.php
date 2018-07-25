@@ -4,11 +4,11 @@
     if(isset($_GET['page'])){
       $offset = $_GET['page'];
     }
-    $sql = "SELECT * FROM change_makers where limit ".$offset.", 10";
+    echo $sql = "SELECT * FROM change_makers where limit ".$offset.", 10";
 
     $result = $conn->query($sql);
     if ($result->num_rows == 0) {
-      header("Location:step1.php");
+      //header("Location:step1.php");
     }else{
       $sql1 = "SELECT p.title,u.name FROM posts as p INNER JOIN users as u ON p.uid = u.id AND p.vendor_id = ".$vendor_id;
       $result1 = $conn->query($sql1);
