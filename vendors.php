@@ -24,7 +24,7 @@
                       <th>
                         Address
                       </th>
-                      <th>
+                      <th class="text-right">
                         Contact
                       </th>
                     </thead>
@@ -46,7 +46,7 @@
                           <?php echo $row['address'];?>
                         </td>
                         <td class="text-right">
-                          <button class="btn btn-primary">Send me details</button>
+                          <button class="btn btn-primary" onclick="senddetails(<?php echo $row['id'];?>)">Send me details</button>
                         </td>
                       </tr>
       <?php
@@ -58,6 +58,19 @@
               </div>
             </div>
           </div>
+<script type="text/javascript">
+function senddetails(id){
+  $.post("ajax_senddetails.php",
+    {id: id},
+    function(data, status){
+      if(data == 'success'){
+        alert("Details emailed");
+      } else {
+        alert("Sorry email not found");
+      }
+  });
+}
+</script>
 <?php
     }
   include "footer.php";
