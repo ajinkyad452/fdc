@@ -25,7 +25,8 @@
           $sql1 = "SELECT p.title,p.change_maker,u.name FROM posts as p INNER JOIN users as u ON p.uid = u.id AND p.vendor_id = ".$vendor_id;
           $result1 = $conn->query($sql1);
           while($row1 = $result1->fetch_assoc()) {
-            if($row['change_maker']%2 == 0){
+            $rand = rand(1,2);
+            if($rand == 1){
               $css = 'gradiamchange';
             }
             else {
