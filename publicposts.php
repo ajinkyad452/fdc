@@ -1,6 +1,16 @@
 <?php
   include "header.php";
-    $sql = "SELECT * FROM posts as p INNER JOIN users as u ON p.uid = u.id";
+  $offset = 0;
+    if(isset($_GET['page'])){
+      $offset = $_GET['page'];
+    }
+    $nextpage = $offset + 10;
+    if($offset != 0)
+      $prevpage = $offset - 10;
+    else
+      $prevpage = 0;
+
+    $sql = "SELECT * FROM posts as p INNER JOIN users as u ON p.uid = u.id limit ".$offset.",10";
     $result = $conn->query($sql);
     if ($result->num_rows == 0) {
       //header("Location:step1.php");
@@ -46,6 +56,12 @@
         
 <?php
       }
+      ?>
+<a class="btn btn-round btn-primary" href="changemakers.php?page=<?php echo $prevpage;?>" >Previous</a>
+    <a class="btn btn-round btn-primary" href="changemakers.php?page=<?php echo $nextpage;?>" >Next</a>
+
+    <?php
+
     }
   include "footer.php";
 ?>
