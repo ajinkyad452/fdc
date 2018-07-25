@@ -19,16 +19,13 @@
                         Name
                       </th>
                       <th>
-                        Email
-                      </th>
-                      <th>
-                        Mobile
+                        Product
                       </th>
                       <th>
                         Address
                       </th>
-                      <th class="text-right">
-                        Note
+                      <th>
+                        Contact
                       </th>
                     </thead>
                     <tbody>
@@ -43,16 +40,13 @@
                           <?php echo $row['name'];?>
                         </td>
                         <td>
-                          <?php echo $row['email'];?>
-                        </td>
-                        <td>
-                          <?php echo $row['mobile_cc'].$row['mobile'];?>
+                          <?php echo $row['product'];?>
                         </td>
                         <td>
                           <?php echo $row['address'];?>
                         </td>
                         <td class="text-right">
-                          <?php echo $row['note'];?>
+                          <button>Send me details</button>
                         </td>
                       </tr>
       <?php
