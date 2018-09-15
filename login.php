@@ -9,6 +9,7 @@ $email = $objUser['email'];
 $token = '1';
 //return $objUser;
 
+
 $query = "SELECT * FROM users where fbid = $id";
 $result = $conn->query($query);
 if ($result->num_rows == 0) {
